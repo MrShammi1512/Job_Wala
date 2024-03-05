@@ -18,12 +18,15 @@ public class JobDetail {
 
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long jobId;
 
 
     @Column(unique = true)
     private Long companyJobId;
+
+    @Column
+    private String companyName;
 
     @Column
     private String jobTitle;
@@ -48,5 +51,8 @@ public class JobDetail {
 
     @Column
     private String jobUrl;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Company companyDetails;
 
 }

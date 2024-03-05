@@ -1,37 +1,24 @@
 package com.NaukriChowk.Job_Wala.dto;
 
-import jakarta.persistence.Column;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.NaukriChowk.Job_Wala.model.Company;
+import lombok.*;
 
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class JobPost {
+public class JobDetailDto {
 
-
-    @Column(unique = true)
+    private Long jobId;
     private Long companyJobId;
-
-
+    private String companyName;
     private String jobTitle;
-
-
     private String jobDescription;
-
-
     private String jobDesignation;
-
-
     private String ctc;
-
-
     private Integer yearsOfExperience;
-
-
     private String jobLocation;
-
-
     private String skills;
+    private String jobUrl;
+    private Company companyDetails;
 }
